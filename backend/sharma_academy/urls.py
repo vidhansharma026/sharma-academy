@@ -1,5 +1,5 @@
 """
-URL configuration for sharma_academy project.
+URL configuration for ${DJANGO_PROJECT_NAME} project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,8 +15,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
+
+admin.site.site_header = 'Sharma Academy Admin'
+admin.site.site_title = 'Sharma Academy Admin Portal'
+admin.site.index_title = 'Welcome to Sharma Academy'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('users_management.urls')),
+
+    # OpenAPI Schema (raw JSON)
+    path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
+
+    # Swagger UI
+    path('swagger/', SpectacularSwaggerView.as_view(url_name='api-schema'), name='swagger-ui'),
+
+    # Redoc UI
+    path('redoc/', SpectacularRedocView.as_view(url_name='api-schema'), name='redoc-ui'),
 ]
