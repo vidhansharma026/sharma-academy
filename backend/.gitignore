@@ -1,8 +1,0 @@
-**/__pycache__/**
-.vscode/
-.env
-# Ignore the virtual environment directory
-env/
-
-# Ignore SQLite database file
-db.sqlite3
