@@ -1,0 +1,74 @@
+**/__pycache__/**
+.vscode/
+.env
+# Ignore the virtual environment directory
+env/
+
+# Ignore SQLite database file
+db.sqlite3
+*.pycA
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+env/
+venv/
+ENV/
+*.env
+*.venv
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+db.sqlite3
+*.sqlite3-journal
+
+# Static files
+/static/
+/media/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.iml
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# MySQL, PostgreSQL and other databases
+*.pid
+*.log
+
+# Deployment files
+*.env
+
+# Test Coverage
+.coverage
+nosetests.xml
+test_*.xml
+*.cover
+
+# Django migrations
+**/migrations/*
+!**/migrations/__init__.py
+
+# Local settings
+local_settings.py
+
+# PyCharm
+.idea/
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# System files
+*.swp
+*~
