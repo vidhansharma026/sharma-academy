@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from phonenumber_field.modelfields import PhoneNumberField
 
-from users_management.constants import USER_TYPES, STUDENT_USER_TYPE
+from users_management.constants import USER_TYPES, STUDENT_USER_TYPE, INSTITUTE_USER_TYPE
 from users_management.managers import CustomUserManager
 from users_management.tokens import generate_referral_code
 
@@ -35,6 +35,7 @@ class User(AbstractUser):
         """
         if self.is_institute and not self.referral_code:
             self.referral_code = generate_referral_code()
+            self.user_type = INSTITUTE_USER_TYPE
         super().save(*args, **kwargs)
 
     def __str__(self):
