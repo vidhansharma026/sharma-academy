@@ -1,7 +1,7 @@
 import uuid
 
-def generate_referral_code(length=10):
-    return f"INST-{uuid.uuid4().hex[:8].upper()}"
+def generate_referral_code(length=20):
+    return f"INST-{uuid.uuid4().hex[:length].upper()}"
 
 
 # from django.contrib.auth.tokens import PasswordResetTokenGenerator

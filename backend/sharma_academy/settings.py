@@ -121,6 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+        'NAME': 'users_management.validators.StrongPasswordValidator',
+    },
 ]
 
 AUTH_USER_MODEL = 'users_management.User'
