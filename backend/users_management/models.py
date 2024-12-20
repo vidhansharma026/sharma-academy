@@ -1,10 +1,12 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
-from users_management.constants import USER_TYPES, STUDENT_USER_TYPE, INSTITUTE_USER_TYPE
+from users_management.constants import (INSTITUTE_USER_TYPE, STUDENT_USER_TYPE,
+                                        USER_TYPES)
 from users_management.managers import CustomUserManager
 from users_management.tokens import generate_referral_code
+
 
 class User(AbstractUser):
     """

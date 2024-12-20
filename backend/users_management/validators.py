@@ -1,5 +1,7 @@
-from django.core.exceptions import ValidationError
 import re
+
+from django.core.exceptions import ValidationError
+
 
 class StrongPasswordValidator:
     def __init__(self, min_length=8):
