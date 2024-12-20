@@ -1,5 +1,6 @@
 import uuid
 
+
 def generate_referral_code(length=20):
     return f"INST-{uuid.uuid4().hex[:length].upper()}"
 

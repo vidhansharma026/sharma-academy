@@ -2,6 +2,7 @@
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import BaseUserManager
 
+
 class CustomUserManager(BaseUserManager):
     """
     Custom manager for User model where email is the unique identifier
